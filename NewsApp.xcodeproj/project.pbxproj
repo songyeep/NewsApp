@@ -136,10 +136,7 @@
 		1E71D70D1EB8812D00EB9597 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				1E71D70E1EB8812D00EB9597 /* AppDelegate.swift */,
-				1E71D7151EB8812D00EB9597 /* Assets.xcassets */,
-				1E71D71A1EB8812D00EB9597 /* Info.plist */,
-				1E953E861EB9BB100071620C /* GoogleService-Info.plist */,
+				1E953E901EBA883E0071620C /* Core Files */,
 				1E71D7401EB8970200EB9597 /* APIs */,
 				1E71D7411EB898B500EB9597 /* Models */,
 				1E71D7461EB8A97800EB9597 /* UIs */,
@@ -237,6 +234,17 @@
 				1E953E8E1EBA81E70071620C /* AlertHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		1E953E901EBA883E0071620C /* Core Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E71D70E1EB8812D00EB9597 /* AppDelegate.swift */,
+				1E71D7151EB8812D00EB9597 /* Assets.xcassets */,
+				1E71D71A1EB8812D00EB9597 /* Info.plist */,
+				1E953E861EB9BB100071620C /* GoogleService-Info.plist */,
+			);
+			name = "Core Files";
 			sourceTree = "<group>";
 		};
 		D73E15BE5AB13F4B86B882B2 /* Pods */ = {
