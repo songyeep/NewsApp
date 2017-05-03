@@ -15,18 +15,36 @@ class NewsMainVC: UIViewController {
     fileprivate let api = MoyaProvider<NewsAPI>()
     
     var articles = [Article]()
+    var favorites = [FavoriteArticle]()
     var selectedArticleUrl: String = ""
+    var showFavoritesOnly: Bool = false
     
     @IBOutlet weak var newsList: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getNews()
+        setInitialTableData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setInitialTableData() {
+        let favorites = try! Realm().objects(FavoriteArticle.self)
+        for favorite in favorites {
+            self.favorites.append(favorite)
+        }
+        getNews()
+    }
+    
+    func getFavorites() {
+        self.favorites.removeAll()
+        let favorites = try! Realm().objects(FavoriteArticle.self)
+        for favorite in favorites {
+            self.favorites.append(favorite)
+        }
+        newsList.reloadData()
     }
     
     func getNews() {
@@ -47,19 +65,23 @@ class NewsMainVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var showFavoritesButton: UIBarButtonItem!
+    @IBAction func showFavorites(_ sender: UIBarButtonItem) {
+        if showFavoritesOnly == false {
+            showFavoritesOnly = true
+            showFavoritesButton.title = "All"
+            navigationItem.title = "Favorite Articles"
+            newsList.reloadData()
+        } else {
+            showFavoritesOnly = false
+            showFavoritesButton.title = "Favorites"
+            navigationItem.title = "Latest on Polygon"
+            getFavorites()
+        }
+    }
+    
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-
     
-
-}
-
-class AlertHelper {
-    static func showError(_ message: String) -> UIAlertController {
-        let alertVC = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
-        alertVC.addAction(close)
-        return alertVC
-    }
 }
