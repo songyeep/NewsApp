@@ -43,7 +43,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleTableCell" rowHeight="300" id="1Rs-G6-0IT" customClass="NewsMainVCTableViewCell" customModule="NewsApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="articleTableCell" rowHeight="300" id="1Rs-G6-0IT" customClass="NewsMainVCTableViewCell" customModule="NewsApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Rs-G6-0IT" id="Tm2-NU-GZc">
@@ -171,16 +171,7 @@
                     <view key="view" contentMode="scaleToFill" id="KGA-sc-xAM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="W3o-q5-IK2">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="W3o-q5-IK2" firstAttribute="centerY" secondItem="KGA-sc-xAM" secondAttribute="centerY" id="P1s-pJ-tja"/>
-                            <constraint firstItem="W3o-q5-IK2" firstAttribute="centerX" secondItem="KGA-sc-xAM" secondAttribute="centerX" id="tsp-3M-xzj"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeX-g3-hTA" userLabel="First Responder" sceneMemberID="firstResponder"/>

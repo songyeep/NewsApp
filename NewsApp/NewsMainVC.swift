@@ -13,7 +13,6 @@ import RealmSwift
 class NewsMainVC: UIViewController {
     
     fileprivate let api = MoyaProvider<NewsAPI>()
-    
     var articles = [Article]()
     var favorites = [FavoriteArticle]()
     var selectedArticleUrl: String = ""
@@ -38,7 +37,7 @@ class NewsMainVC: UIViewController {
         getNews()
     }
     
-    func getFavorites() {
+    func setFavorites() {
         self.favorites.removeAll()
         let favorites = try! Realm().objects(FavoriteArticle.self)
         for favorite in favorites {
@@ -76,7 +75,7 @@ class NewsMainVC: UIViewController {
             showFavoritesOnly = false
             showFavoritesButton.title = "Favorites"
             navigationItem.title = "Latest on Polygon"
-            getFavorites()
+            setFavorites()
         }
     }
     

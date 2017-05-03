@@ -96,15 +96,10 @@ extension NewsMainVC: UITableViewDelegate, UITableViewDataSource {
         try! realm.write {
             realm.add(favoriteArticle)
         }
-        
-//        let successAlert = AlertHelper.showSuccess("Added article to Favorites")
-//        self.present(successAlert, animated: true) { 
-//            self.newsList.reloadData()
-//        }
-        
+                
         let alertVC = UIAlertController(title: "Success", message: "Added article to Favorites", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
-            self.getFavorites()
+            self.setFavorites()
         }
         alertVC.addAction(ok)
         self.present(alertVC, animated: true, completion: nil)
@@ -118,7 +113,7 @@ extension NewsMainVC: UITableViewDelegate, UITableViewDataSource {
     
         let alertVC = UIAlertController(title: "Success", message: "Deleted from Favorites", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
-            self.getFavorites()
+            self.setFavorites()
         }
         alertVC.addAction(ok)
         self.present(alertVC, animated: true, completion: nil)

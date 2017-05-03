@@ -9,15 +9,17 @@
 import UIKit
 import WebKit
 
-class NewsDetailsVC: UIViewController, WKUIDelegate {
+class NewsDetailsVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     var webView: WKWebView!
     var urlString: String!
+    
 
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.uiDelegate = self
+        webView.navigationDelegate = self
         view = webView
     }
     
@@ -30,6 +32,15 @@ class NewsDetailsVC: UIViewController, WKUIDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
 }

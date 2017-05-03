@@ -16,11 +16,4 @@ class AlertHelper {
         alertVC.addAction(close)
         return alertVC
     }
-    static func showSuccess(_ message: String) -> UIAlertController {
-        let alertVC = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertVC.addAction(ok)
-        return alertVC
-    }
-    
 }

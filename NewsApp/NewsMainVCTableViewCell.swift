@@ -27,7 +27,7 @@ class NewsMainVCTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addToFavoritesButton.layer.borderColor = UIColor.blue.cgColor
+        addToFavoritesButton.layer.borderColor = UIColor.black.cgColor
         addToFavoritesButton.layer.borderWidth = 0.5
     }
     
