@@ -16,7 +16,7 @@ enum NewsAPI {
 extension NewsAPI: TargetType {
     var baseURL: URL {
         var urlString = "https://newsapi.org/v1/articles"
-        urlString += "?source=reddit-r-all"
+        urlString += "?source=polygon"
         urlString += "&apiKey=ccf3b62f6ba04f1980a32d44f3f84335"
         return URL(string: urlString)!
     }

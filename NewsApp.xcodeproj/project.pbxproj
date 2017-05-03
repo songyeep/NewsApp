@@ -182,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				1E71D7481EB8A9EA00EB9597 /* Article.swift */,
-				1E71D7421EB8A4FB00EB9597 /* JSONResponseMapper.swift */,
 				1E953E761EB912150071620C /* FavoriteArticle.swift */,
+				1E71D7421EB8A4FB00EB9597 /* JSONResponseMapper.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

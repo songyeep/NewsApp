@@ -13,4 +13,7 @@ class FavoriteArticle: Object {
     dynamic var author = ""
     dynamic var title = ""
     dynamic var url = ""
+    dynamic var articleDescription = ""
+    dynamic var urlToImage = ""
+    dynamic var publishedAt = ""
 }

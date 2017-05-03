@@ -19,6 +19,10 @@ extension FavoritesVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoritesTable.dequeueReusableCell(withIdentifier: "favoritesTableCell", for: indexPath) as! FavoritesVCTableViewCell
         configureFavoritesCell(cell, favorites[indexPath.row])

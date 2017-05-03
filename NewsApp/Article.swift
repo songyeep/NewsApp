@@ -10,13 +10,19 @@ import Foundation
 import SwiftyJSON
 
 class Article: Mappable {
-    dynamic var author: String = ""
-    dynamic var title: String = ""
-    dynamic var url: String = ""
+    var author: String = ""
+    var title: String = ""
+    var url: String = ""
+    var description: String = ""
+    var urlToImage: String = ""
+    var publishedAt: String = ""
     
     required init(jsonData: JSON) {
         self.author = jsonData["author"].stringValue
         self.title = jsonData["title"].stringValue
         self.url = jsonData["url"].stringValue
+        self.description = jsonData["description"].stringValue
+        self.urlToImage = jsonData["urlToImage"].stringValue
+        self.publishedAt = jsonData["publishedAt"].stringValue
     }
 }

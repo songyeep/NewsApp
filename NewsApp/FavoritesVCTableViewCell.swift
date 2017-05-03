@@ -11,6 +11,7 @@ import UIKit
 class FavoritesVCTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var deleteButtonPressed: (() -> Void)?
     
@@ -18,6 +19,12 @@ class FavoritesVCTableViewCell: UITableViewCell {
         if let buttonPressed = deleteButtonPressed {
             buttonPressed()
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        deleteButton.layer.borderColor = UIColor.blue.cgColor
+        deleteButton.layer.borderWidth = 0.5
     }
     
 }

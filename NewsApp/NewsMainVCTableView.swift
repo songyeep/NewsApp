@@ -20,6 +20,10 @@ extension NewsMainVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = newsList.dequeueReusableCell(withIdentifier: "articleTableCell", for: indexPath) as! NewsMainVCTableViewCell
         configureNewsTableCell(cell, articles[indexPath.row])
@@ -34,6 +38,12 @@ extension NewsMainVC: UITableViewDelegate, UITableViewDataSource {
     
     func configureNewsTableCell(_ cell: NewsMainVCTableViewCell, _ article: Article) {
         cell.title.text = article.title
+        if let urlToImage = URL(string: article.urlToImage) {
+            cell.thumbnailImage.sd_setImage(with: urlToImage, placeholderImage: UIImage())
+        }
+        cell.date.text = article.publishedAt
+        cell.author.text = "By " + article.author
+        
         cell.favoritesButtonPressed = {
             self.savedAsFavorite(article)
         }
@@ -42,6 +52,10 @@ extension NewsMainVC: UITableViewDelegate, UITableViewDataSource {
     func savedAsFavorite(_ article: Article) {
         let favoriteArticle = FavoriteArticle()
         favoriteArticle.title = article.title
+        favoriteArticle.url = article.url
+        favoriteArticle.articleDescription = article.description
+        favoriteArticle.urlToImage = article.urlToImage
+        favoriteArticle.publishedAt = article.publishedAt
         
         let realm = try! Realm()
         try! realm.write {

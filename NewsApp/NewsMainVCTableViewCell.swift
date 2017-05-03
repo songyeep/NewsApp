@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 class NewsMainVCTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var thumbnailImage: UIImageView!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var addToFavoritesButton: UIButton!
     
     var favoritesButtonPressed: (() -> Void)?
     
@@ -18,6 +23,12 @@ class NewsMainVCTableViewCell: UITableViewCell {
         if let buttonPressed = favoritesButtonPressed {
             buttonPressed()
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        addToFavoritesButton.layer.borderColor = UIColor.blue.cgColor
+        addToFavoritesButton.layer.borderWidth = 0.5
     }
     
 }
