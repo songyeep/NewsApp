@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,37 +37,47 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-Kk-gZc">
-                                <rect key="frame" x="89" y="359" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log In"/>
-                                <connections>
-                                    <action selector="login:" destination="6xe-RY-qmt" eventType="touchUpInside" id="B8P-Ib-RXb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDc-dl-n6c">
-                                <rect key="frame" x="214" y="359" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="signUp:" destination="6xe-RY-qmt" eventType="touchUpInside" id="zFW-cF-VpW"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polygon API News App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSR-Cn-9nZ">
-                                <rect key="frame" x="100" y="169" width="174" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Gaming News from Polygon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSR-Cn-9nZ">
+                                <rect key="frame" x="55.5" y="169" width="264" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-Kk-gZc">
+                                <rect key="frame" x="95" y="358" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8pQ-iZ-imx"/>
+                                    <constraint firstAttribute="width" constant="62" id="U4L-Hn-DL4"/>
+                                </constraints>
+                                <state key="normal" title="LOG IN"/>
+                                <connections>
+                                    <action selector="login:" destination="6xe-RY-qmt" eventType="touchUpInside" id="B8P-Ib-RXb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDc-dl-n6c">
+                                <rect key="frame" x="220" y="358" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Heq-Mp-jsG"/>
+                                    <constraint firstAttribute="height" constant="30" id="vZ4-DO-Bja"/>
+                                </constraints>
+                                <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="signUp:" destination="6xe-RY-qmt" eventType="touchUpInside" id="zFW-cF-VpW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U4A-0b-k2P" firstAttribute="centerX" secondItem="Ki9-5s-w3S" secondAttribute="centerX" id="DCY-TD-7fl"/>
                             <constraint firstItem="FoE-lB-pLp" firstAttribute="top" secondItem="U4A-0b-k2P" secondAttribute="bottom" constant="19" id="HUO-7q-PkB"/>
                             <constraint firstItem="FoE-lB-pLp" firstAttribute="width" secondItem="U4A-0b-k2P" secondAttribute="width" id="gNe-2w-9Ye"/>
+                            <constraint firstItem="YsR-Kk-gZc" firstAttribute="leading" secondItem="Ki9-5s-w3S" secondAttribute="leadingMargin" constant="79" id="hyM-at-5E2"/>
                             <constraint firstItem="TSR-Cn-9nZ" firstAttribute="centerX" secondItem="Ki9-5s-w3S" secondAttribute="centerX" id="lpc-Zv-qNr"/>
+                            <constraint firstItem="oDc-dl-n6c" firstAttribute="top" secondItem="FoE-lB-pLp" secondAttribute="bottom" constant="40" id="ogO-qG-VkC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oDc-dl-n6c" secondAttribute="trailing" constant="79" id="ucg-IY-g4D"/>
                             <constraint firstItem="U4A-0b-k2P" firstAttribute="top" secondItem="TSR-Cn-9nZ" secondAttribute="bottom" constant="49" id="xWD-v0-aYH"/>
                             <constraint firstItem="U4A-0b-k2P" firstAttribute="top" secondItem="3ES-4O-BK5" secondAttribute="bottom" constant="219" id="y9l-uN-C5A"/>
+                            <constraint firstItem="YsR-Kk-gZc" firstAttribute="top" secondItem="FoE-lB-pLp" secondAttribute="bottom" constant="40" id="z4f-NH-h4R"/>
                             <constraint firstItem="FoE-lB-pLp" firstAttribute="centerX" secondItem="U4A-0b-k2P" secondAttribute="centerX" id="zRp-Ji-dFH"/>
                         </constraints>
                     </view>
